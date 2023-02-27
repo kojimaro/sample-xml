@@ -1,5 +1,27 @@
-<xsl:for-each select="1 to 5">
-  <xsl:variable name="i" select="." />
-  <xsl:value-of select="$i " />
-  <title><![CDATA[テスト求人]]></title>
-</xsl:for-each>
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/TR/WD-xsl">
+　<xsl:template match="/">
+　　<html>
+　　　<body>
+　　　　<xsl:apply-templates select="おこづかい帳/支出" />
+　　　</body>
+　　</html>
+　</xsl:template>
+
+　<xsl:template match="おこづかい帳/支出">
+　　<table border="1">
+　　　<xsl:for-each select="内容">
+　　　<th colspan="3"> <xsl:value-of select="日付" /></th>
+　　　　<tr>
+　　　　　<th>交通費</th><th>食費</th><th>嗜好品</th>
+　　　　</tr>
+　　　　<tr>
+　　　　　<td><xsl:value-of select="交通費" />円</td>
+　　　　　<td><xsl:value-of select="食費" />円</td>
+　　　　　<td><xsl:value-of select="嗜好品" />円</td>
+　　　　</tr>
+　　　</xsl:for-each>
+　　</table>
+　</xsl:template>
+</xsl:stylesheet>
+
