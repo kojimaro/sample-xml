@@ -1,3 +1,11 @@
+<xsl:for-each select="1 to 5">
+  <xsl:variable name="i" select="." />
+  <xsl:value-of select="$i " />
+  <title><![CDATA[テスト求人]]></title>
+</xsl:for-each>
+
+
+<!--
 <source>
 <job>
 <title><![CDATA[テスト求人]]></title>
@@ -178,3 +186,4 @@ http://example.com
 <entryurl><![CDATA[https://1avkc1.stg.media.saiyo-job.jp/01GMTCE5AYX2Q5V026BTD188M7/entry/redirect_bn/]]></entryurl>
 </job>
 </source>
+-->
